@@ -1,0 +1,27 @@
+<div style="text-align: center;" class="row">
+    <div class="col">
+        <h1>Cars</h1>
+        <div class="buttonn">
+            <button (click)="createCar()" type="button" class="btn btn-primary btn-lg" style="display: flex-center;">Add Car</button>
+        </div>
+    </div>
+</div>
+<mat-grid-list cols="3" rowHeight="100px">
+    <mat-grid-tile *ngFor="let car of cars$">
+        <div class="car-item">
+            {{car.brand}} - {{car.model}}
+            <div class="car-buttons">
+                <button (click)="showCar(car)" type="button" class="btn btn-primary me-2 ms-2">Show Car</button>
+                <button (click)="deleteCar(car)" type="button" class="btn btn-danger me-2">Delete Car</button>
+                <button (click)="editCar(car)" type="button" class="btn btn-success me-2">Edit Car</button>
+            </div>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<div class="available"><button (click)="calculateBrands()" type="button" id="buttonStats" class="btn btn-info" *ngIf="!hide">Show number of cars</button></div>
+<div class="available" *ngIf="total">
+    <h1>Total number of cars: {{this.total}}</h1>
+    <h5 *ngFor="let info of brands | keyvalue">{{info.key}} : {{info.value}}</h5>
+</div>

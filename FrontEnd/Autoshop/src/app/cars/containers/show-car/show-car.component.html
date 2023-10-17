@@ -1,0 +1,11 @@
+<div *ngIf="car$">
+    <div class="card text-bg-danger m-2" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{car$.model}}</h5>
+            <p class="card-text">
+            <div>Brand: {{car$.brand}}</div>
+
+            <div>Year: {{car$.productionYear}}</div>
+            <div>Stock: {{car$.stock}}</div>
+        </div>
+    </div>

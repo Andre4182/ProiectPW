@@ -1,0 +1,16 @@
+.available {
+    text-align: center;
+}
+
+.box{
+    display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.box-item{
+    background-color: #f2f2f2;
+    padding: 5px;
+    text-align: center;
+  }

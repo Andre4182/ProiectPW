@@ -1,0 +1,23 @@
+    <form #myForm="ngForm" (ngSubmit)="submit(myForm)">
+        <div class="form-group">
+        <label for="InputBrand">Brand</label>
+        <input type="brand" class="form-control" id="InputBrand" placeholder="Enter brand" required name ="brand" [(ngModel)]="brand" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="InputModel">Model</label>
+            <input type="model" class="form-control" id="InputModel" placeholder="Enter model" required name ="model" [(ngModel)]="model" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="InputYear">Production Year</label>
+            <input type="number" class="form-control" id="year" placeholder="Enter production year" required name ="year" [(ngModel)]="productionYear" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="InputStock">Stock</label>
+            <input type="number" class="form-control" id="InputStock" placeholder="Enter stock" required name ="stock" [(ngModel)]="stock" autocomplete="off">
+        </div>
+        <p></p>
+        <button type="submit" class="btn btn-primary">{{textButton}}</button>
+        <h1 *ngIf="text">Added car with brand: {{this.car.brand}}</h1>
+        <h1 *ngIf="textUpdate">Edited succesfully!</h1>
+        <h1 *ngIf="error" style="color: red;">Fill in the fields!</h1>
+  </form>

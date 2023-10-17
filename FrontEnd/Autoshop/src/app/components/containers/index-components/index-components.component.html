@@ -1,0 +1,24 @@
+<div style="text-align:center">
+    <div>
+        <h1>Components</h1>
+        <h3>Total value of available components: {{getTotalValue()}}</h3>
+        <div>
+            <button (click)="createComp()" [disabled]="isLoggedOut()" type="button" class="btn btn-primary btn-lg"
+                style="display: flex-center;">Add Component</button>
+        </div>
+    </div>
+</div>
+
+<input type="number" id="MinPrice" placeholder="Enter a price" required name ="minPrice" [(ngModel)]="minPrice" autocomplete="off">
+<button (click)="calculateMin()" type="button" class="btn btn-info">Search</button>
+
+<div class="component-list">
+    <div *ngFor="let comp of calculateMin()" class="component-item">
+        {{ comp.name }} - {{ comp.price }}
+        <div class="component-buttons">
+            <button (click)="showComp(comp)" [disabled]="isLoggedOut()" type="button" class="ms-2 btn btn-primary me-2">Show Comp</button>
+            <button (click)="deleteComp(comp)" [disabled]="isLoggedOut()" type="button" class="btn btn-danger me-2">Delete Comp</button>
+            <button (click)="updateComp(comp)" [disabled]="isLoggedOut()" type="button" class="btn btn-success me-2">Edit Comp</button>
+        </div>
+    </div>
+</div>

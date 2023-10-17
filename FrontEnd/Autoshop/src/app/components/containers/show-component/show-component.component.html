@@ -1,0 +1,10 @@
+<div *ngIf="comp$">
+    <div class="card text-bg-info m-2" style="width: 18rem;" >
+        <div class="card-body">
+         <h5 class="card-title">{{comp$.idComponent}}</h5>
+         <p class="card-text">
+            <div>Name: {{comp$.name}} </div>
+             <div>Price: {{comp$.price}}</div>
+             <div>Stock: {{comp$.stock}}</div>
+    </div>
+</div>
